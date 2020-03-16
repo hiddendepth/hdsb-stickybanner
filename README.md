@@ -40,4 +40,4 @@ This plugin makes it easy to display a sticky announcement banner, at the top or
 == Upgrade Notice ==
 
 = 1.0.0 =
-This is the first version.
+* This is the first version.
