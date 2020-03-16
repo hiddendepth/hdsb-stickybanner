@@ -1,0 +1,109 @@
+/* Use a set font to make layout more predictable */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap');
+
+@keyframes slideInBtoT {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInTtoB {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Make sure body takes up at 100% height so we can add body padding */
+html, body {
+  overflow: auto;
+  min-height: 100vh;
+}
+
+.hd-stickybanner {
+  width: 100%;
+  background: #910A06;
+  text-align: center;
+  z-index: 99999;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 10px;
+  font-family: 'Montserrat', Tahoma, Arial, sans-serif;
+  
+}
+
+.hd-stickybanner-top {
+  bottom: auto;
+  top: 0;
+  box-shadow: 0px 0 10px rgba(0, 0, 0, 0.8);
+  animation: 1s ease-out 0s 1 slideInTtoB;
+}
+
+.hd-stickybanner-bottom {
+  bottom: 0;
+  top: auto;
+  box-shadow: -40px 1px 3px 2px rgba(0,0,0,.15);
+  animation: 1s ease-out 0s 1 slideInBtoT;
+}
+
+/* Normalise all text */
+.hd-stickybanner * {
+  font-size: 15px;
+  line-height: normal;
+  letter-spacing: normal;
+  letter-spacing: -.022em;
+}
+
+.hd-stickybanner-text {
+  color: #ffffff;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  font-weight: normal;
+  word-spacing: .15em;
+}
+
+.hd-stickybanner-btn {
+  color: #910A06;
+  background: #ffffff;
+  padding: 4px 8px;
+  margin: 0 10px;
+  transition: all ease-in-out .2s;
+  min-width: 180px;
+  font-weight: bold;
+  letter-spacing: normal;
+}
+.hd-stickybanner-btn:hover {
+  color: #910A06;
+  text-decoration: none;
+  transform: scale(1.05);
+}
+
+@media (min-width:650px) {
+  .hd-stickybanner {
+    flex-direction: row;
+    padding: 14px 30px;
+    flex-wrap: wrap;
+  }
+  .hd-stickybanner * {
+    font-size: 15px;
+  }
+  .hd-stickybanner-text {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width:769px) {
+  .hd-stickybanner * {
+    font-size: 17px;
+  }
+}
