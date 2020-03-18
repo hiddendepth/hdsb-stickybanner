@@ -26,7 +26,7 @@ This plugin makes it easy to display a sticky announcement banner, at the top or
 = From WordPress.org =
 
 1. Download 'Sticky Banner'.
-2. Upload the 'hd-stickybanner' directory to your '/wp-content/plugins/' directory, using your favorite method (ftp, sftp, scp, etc...)
+2. Upload the 'hdsb-stickybanner' directory to your '/wp-content/plugins/' directory, using your favorite method (ftp, sftp, scp, etc...)
 3. Activate 'Sticky Banner' from your Plugins page.
 4. Visit 'Sticky Banner' in the sidebar to add content and change colours.
 
@@ -40,4 +40,4 @@ This plugin makes it easy to display a sticky announcement banner, at the top or
 == Upgrade Notice ==
 
 = 1.0.0 =
-* This is the first version.
+This is the first version.
