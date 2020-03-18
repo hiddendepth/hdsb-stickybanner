@@ -12,23 +12,20 @@
  * @version 1.0.0
  * @author Hidden Depth <info@hd.ie>
  */
-define ('VERSION', '1.0.0');
+define ('HDSB_VERSION', '1.0.0');
 
 add_action( 'admin_enqueue_scripts', 'hdsb_stickybanner_enqueue_admin_scripts' );
 function hdsb_stickybanner_enqueue_admin_scripts( $hook_suffix ) {
-    // first check that $hook_suffix is appropriate for your admin page
 	wp_enqueue_style( 'wp-color-picker' );
 	wp_enqueue_script( 'hdsb-stickybanner', plugins_url('js/hdsb-stickybanner-admin.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
-	
-	// Enqueue the style
-	wp_register_style('hdsb-stickybanner-admin-style',  plugin_dir_url( __FILE__ ) .'css/hdsb-stickybanner-admin.css', '', VERSION);
+	wp_register_style('hdsb-stickybanner-admin-style',  plugin_dir_url( __FILE__ ) .'css/hdsb-stickybanner-admin.css', '', HDSB_VERSION);
     wp_enqueue_style('hdsb-stickybanner-admin-style');
 }
 
 add_action( 'wp_enqueue_scripts', 'hdsb_stickybanner_scripts' );
 function hdsb_stickybanner_scripts() {
 	// Enqueue the style
-	wp_register_style('hdsb-stickybanner-style',  plugin_dir_url( __FILE__ ) .'css/hdsb-stickybanner.css', '', VERSION);
+	wp_register_style('hdsb-stickybanner-style',  plugin_dir_url( __FILE__ ) .'css/hdsb-stickybanner.css', '', HDSB_VERSION);
 	wp_enqueue_style('hdsb-stickybanner-style');
 
 	// Set Script parameters
@@ -43,7 +40,7 @@ function hdsb_stickybanner_scripts() {
 		'hdsb_stickybanner_btn_link'   => get_option('hdsb_stickybanner_btn_link')
 	);
 	// Enqueue the script
-    wp_register_script('hdsb-stickybanner-script', plugin_dir_url( __FILE__ ) . 'js/hdsb-stickybanner.js', array( 'jquery' ), VERSION);
+    wp_register_script('hdsb-stickybanner-script', plugin_dir_url( __FILE__ ) . 'js/hdsb-stickybanner.js', array( 'jquery' ), HDSB_VERSION);
 	wp_localize_script('hdsb-stickybanner-script', 'scriptParams', $script_params);
 	wp_enqueue_script('hdsb-stickybanner-script');
 }
@@ -88,12 +85,11 @@ function hdsb_stickybanner_settings() {
 }
 
 function hdsb_stickybanner_settings_page() {
-	?>
-
+?>
 	<div class="wrap">
 		<div style="display: flex;justify-content: space-between; align-items: center;">
 			<h2>Sticky Banner Settings</h2>
-			<a href="https://hiddendepth.ie" target="_blank" style="padding: 10px 20px 6px; margin-bottom: 10px; border-radius: 6px;">
+			<a href="https://hiddendepth.ie/?utm_source=wp_plugin&utm_medium=website&utm_campaign=sticky_banner target="_blank" style="padding: 10px 20px 6px; margin-bottom: 10px; border-radius: 6px;">
 				<img height="50" src="<?php echo plugin_dir_url( __FILE__ ) . '/img/hd-logo.svg'; ?>" alt="By Hidden Depth">
 			</a>
 		</div>
@@ -201,6 +197,6 @@ function hdsb_stickybanner_settings_page() {
 		style_text_colour.appendChild(document.createTextNode('.hdsb-stickybanner .hdsb-stickybanner-text{color:' + (document.getElementById('hdsb_stickybanner_text_colour').value || '#ffffff') + ';} .hdsb-stickybanner .hdsb-stickybanner-btn {padding: 4px 8px; margin: 0 10px; background:' + (document.getElementById('hdsb_stickybanner_text_colour').value || '#ffffff') + ';}'));
 		document.getElementsByTagName('head')[0].appendChild(style_text_colour);
 	</script>
-	<?php
+<?php
 }
 ?>

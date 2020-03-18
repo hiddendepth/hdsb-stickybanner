@@ -5,13 +5,20 @@ jQuery(document).ready(function ($) {
                 .prependTo('body');
         }
     }
-    // Use header height to set body padding-top
-    $(window).resize(function() {
-        $(document.body).css('padding-top', $('.hdsb-stickybanner-top').outerHeight(true));
-    }).resize();
-    
-    // Use header height to set body padding-bottom
-    $(window).resize(function() {
-        $(document.body).css('padding-bottom', $('.hdsb-stickybanner-bottom').outerHeight(true));
-    }).resize();
+
+    if (scriptParams.hdsb_stickybanner_position === "top") {
+        $(window).on("load resize", function (event) {
+            var $navbar = $(".hdsb-stickybanner-top");
+            var $body = $("body");
+        
+            $body.css("padding-top", $navbar.outerHeight());
+        });
+    } else if (scriptParams.hdsb_stickybanner_position === "bottom") {
+        $(window).on("load resize", function (event) {
+            var $navbar = $(".hdsb-stickybanner-bottom");
+            var $body = $("body");
+        
+            $body.css("padding-bottom", $navbar.outerHeight());
+        });
+    }
 });
