@@ -1,0 +1,51 @@
+@import 'stickybanner-styles';
+
+@keyframes slideInBtoT {
+	0% {
+		transform: translateY(100%);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes slideInTtoB {
+	0% {
+		transform: translateY(-100%);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+/* Make sure body takes up at 100% height so we can add body padding */
+body {
+	// overflow: auto;
+	min-height: 100vh;
+}
+
+.hdsb-stickybanner {
+	display: none;
+	width: 100%;
+	z-index: 99999;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+}
+.hdsb-stickybanner.is-active {
+	display: flex;
+}
+
+.hdsb-stickybanner-top {
+	bottom: auto;
+	top: 0;
+	box-shadow: 0px 0 10px rgba(0, 0, 0, 0.8);
+	animation: 1s ease-out 0s 1 slideInTtoB;
+}
+
+.hdsb-stickybanner-bottom {
+	bottom: 0;
+	top: auto;
+	box-shadow: -40px 1px 3px 2px rgba(0, 0, 0, 0.15);
+	animation: 1s ease-out 0s 1 slideInBtoT;
+}

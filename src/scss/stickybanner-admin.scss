@@ -1,0 +1,39 @@
+@import 'stickybanner-styles';
+
+#preview_banner {
+	margin: 10px;
+}
+.hdsb-stickybanner {
+	display: flex;
+}
+.hdsb-stickybanner-admin-table input[type='text'],
+.hdsb-stickybanner-admin-table input[type='url'] {
+	width: 100%;
+}
+.hdsb-stickybanner-position .hdsb-stickybanner-position-radios {
+	display: flex;
+}
+
+.hdsb-stickybanner-position label {
+	margin-right: 30px;
+}
+
+.hdsb_donate {
+	background: #ff5c4d;
+	color: #fff;
+	text-decoration: none;
+	padding: 8px 18px;
+	border-radius: 6px;
+	text-transform: uppercase;
+}
+.hdsb_donate:hover {
+	color: #fff;
+	background: #0d435b;
+}
+
+@media (min-width: 769px) {
+	.hdsb-stickybanner-admin-table input[type='text'],
+	.hdsb-stickybanner-admin-table input[type='url'] {
+		width: 80%;
+	}
+}

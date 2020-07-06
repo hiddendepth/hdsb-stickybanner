@@ -1,0 +1,92 @@
+.hdsb-stickybanner {
+	background: #910a06;
+	text-align: center;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 18px 55px 18px 10px;
+	font-family: Arial, sans-serif;
+
+	/* Normalise all text */
+	* {
+		font-size: 15px;
+		line-height: normal;
+		letter-spacing: normal;
+		letter-spacing: -0.022em;
+		font-family: Arial, sans-serif !important;
+	}
+
+	.hdsb-stickybanner-text {
+		color: #ffffff;
+		margin-bottom: 10px;
+		line-height: 1.4;
+		font-weight: normal;
+		word-spacing: 0.15em;
+	}
+
+	.hdsb-stickybanner-btn {
+		color: #910a06;
+		background: #ffffff;
+		padding: 4px 8px;
+		margin: 0 10px;
+		transition: all ease-in-out 0.2s;
+		min-width: 180px;
+		font-weight: bold;
+		letter-spacing: normal;
+	}
+
+	.hdsb-stickybanner-btn:hover {
+		color: #910a06;
+		text-decoration: none;
+		transform: scale(1.05);
+	}
+
+	.hdsb-stickybanner-close {
+		display: block;
+		content: '';
+		width: 30px;
+		height: 30px;
+		position: absolute;
+		right: 15px;
+		top: 15px;
+		padding: 6px;
+
+		background-color: #000;
+		border-radius: 100px;
+
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			left: 8px;
+			top: 8px;
+			width: 14px;
+			height: 14px;
+			background: url('../img/close-x.svg') no-repeat center center;
+			background-size: cover !important;
+		}
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+
+@media (min-width: 650px) {
+	.hdsb-stickybanner {
+		flex-direction: row;
+		padding: 14px 50px 14px 30px;
+		flex-wrap: wrap;
+		* {
+			font-size: 15px;
+		}
+		.hdsb-stickybanner-text {
+			margin-bottom: 0;
+		}
+	}
+}
+
+@media (min-width: 769px) {
+	.hdsb-stickybanner * {
+		font-size: 17px;
+	}
+}
